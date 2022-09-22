@@ -182,7 +182,6 @@
 > > model.add(Dense(1,activation='sigmoid'))
 > > ...(생략)
 > > hist=model.fit(X,Y,validation_split=0.20,epochs=350,batch_size=500,callbacks=[early_stopping_callback,checkpointer])
-> > print("\n Accuracy:%.4f"%(model.evaluate(X,Y)[1]))  
 > > ```
 > > output : 
 > > ```
@@ -197,8 +196,17 @@
 >> Epoch 00323: val_loss did not improve from 0.40818
 >> 918/918 [==============================] - 0s 15us/step          
 >> ```
-
-
+>> #### 모델 정확도와 손실 시각화
+>> ```python
+>> print("\n Accuracy:%.4f"%(model.evaluate(X,Y)[1]))  
+>> y_vloss=hist.history['val_loss']
+>> y_acc=hist.history['acc']       
+>> x_len=numpy.arange(len(y_acc))
+>> plt.plot(x_len,y_vloss,"o",c="red",markersize=3)
+>> plt.plot(x_len,y_acc,"o",c="blue",markersize=3)
+>> plt.ylim([0,1])
+>> plt.show
+>> <img src="https://user-images.githubusercontent.com/111839344/191796153-d0819fb1-a2b0-4f2f-8267-2f11a0927e47.png" width="400" height="400">
 
 
 
