@@ -84,5 +84,18 @@
 > ST_Slope : 0 = Down , 1 = Flat , 2 = Up
 > ```
 
+## 데이터 시각화
+> ### 심장병 환자수 시각화
+> ```python
+> df_new3=pd.read_csv('new_heart2.csv')
+> print(df_new3["HeartDisease"].value_counts())
+> f=sns.countplot(x='HeartDisease',data=df_new3)
+> f.set_xticklabels(['NO Heart Disease','Heart Disease'])
+> plt.xlabel("")
+> fig,ax=plt.subplots(1, 1, figsize = (7,7))
+> df_new3['HeartDisease'].value_counts().plot.pie(explode=[0,0.05],startangle=90, autopct='%0.1f%%',ax=ax,cmap='coolwarm_r')
+> plt.title("Heart Disease")
+> ```
+> <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="170" height="300">
 
 
