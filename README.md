@@ -196,7 +196,7 @@
 >> Epoch 00323: val_loss did not improve from 0.40818
 >> 918/918 [==============================] - 0s 15us/step          
 >> ```
->> #### 모델 정확도와 손실 시각화
+>> #### 케라스 모델 정확도와 손실 시각화
 >> ```python
 >> print("\n Accuracy:%.4f"%(model.evaluate(X,Y)[1]))  
 >> y_vloss=hist.history['val_loss']
@@ -208,7 +208,28 @@
 >> plt.show
 >> ```
 >> <img src="https://user-images.githubusercontent.com/111839344/191796153-d0819fb1-a2b0-4f2f-8267-2f11a0927e47.png" width="400" height="400">
-
-
-
+>>
+>> #### K겹 교차 검증 모델 (5겹)
+>> ```python
+>> n_fold=5
+>> skf=StratifiedKFold(n_splits=n_fold,shuffle=True, random_state=seed)
+>> ...
+>> for train,test in skf.split(X,Y):
+>>    model_k=Sequential()
+>>    model_k.add(Dense(64, input_dim=11,activation='relu'))    
+>>    model_k.add(Dense(32, activation='relu'))                 
+>>    model_k.add(Dense(16, activation='relu'))                 
+>>    model_k.add(Dense(1,activation='sigmoid'))
+>> ...
+>> model_k.fit(X[train],Y[train],epochs=100,batch_size=5)
+>> ...
+>> ```
+>> output :
+>> ```
+>> Epoch 100/100
+>> 735/735 [==============================] - 0s 160us/step - loss: 0.3351 - acc: 0.8463
+>> 183/183 [==============================] - 0s 1ms/step
+>> 
+>> 5 Fold Accuracy: ['0.8641', '0.8098', '0.5543', '0.8579', '0.8579']
+>> ```
 
