@@ -96,7 +96,7 @@
 > df_new3['HeartDisease'].value_counts().plot.pie(explode=[0,0.05],startangle=90, autopct='%0.1f%%',ax=ax,cmap='coolwarm_r')
 > plt.title("Heart Disease")
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="200" height="400">
+> <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="250" height="400">
 
 > ### Heatmap 관계도
 > ```python
@@ -106,6 +106,20 @@
 > plt.show()
 > ```
 > <img src="https://user-images.githubusercontent.com/111839344/191790969-289c40dc-e801-4979-bbd7-787b7854796b.png" width="400" height="400">
+
+> ### 협심증 유발 운동, 가슴통증, 공복 시 혈당, 최대 운동 심전도 기울기, 나이와 심장병의 관계도
+> ```
+> f, ax = plt.subplots(2, 2, figsize=(16, 8))
+> sns.countplot('ExerciseAngina', hue='HeartDisease', data=df_new3,ax=ax[0,0])
+> sns.countplot('ChestPainType', hue='HeartDisease', data=df_new3, ax=ax[0,1])
+> sns.countplot('FastingBS', hue='HeartDisease', data=df_new3, ax=ax[1,0])
+> sns.countplot('ST_Slope', hue='HeartDisease', data=df_new3, ax=ax[1,1])
+> plt.figure(2)
+> grid=sns.FacetGrid(df_new3,col='HeartDisease')
+> grid.map(plt.hist,'Age',bins=10)
+> plt.show()
+> ```
+
 
 
 
