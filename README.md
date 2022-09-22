@@ -2,7 +2,7 @@
 =============
 #### 자세한 코드는 [여기있습니다](https://github.com/yeol0129/xray_ResNet50_Pneumonia/blob/main/pneumonia_resnet50.ipynb)
 ## Data
-> ## heart.csv의 데이터 예
+> ### heart.csv의 데이터 예
 > Age|Sex|ChestPainType|RestingBP|Cholesterol|FastingBS|RestingECG|MaxHR|ExerciseAngina|Oldpeak|ST_Slope|HeartDisease
 > ---|---|---|---|---|---|---|---|---|---|---|---|
 > 40|M|ATA|140|289|0|Normal|172|N|0|Up|0
@@ -48,4 +48,28 @@
 > ```
 
 ## 데이터 전처리
-
+> ### 데이터 불러오기
+> ```python
+>  df = pd.read_csv('heart.csv',index_col=None,header=None)
+> ```
+> ### LabelEncoder를 사용하여 DataSet에 있는 글자를 숫자로 변형하고 새롭게 저장합니다.
+> ```python
+> dataset=df.values
+> e=LabelEncoder()
+> e.fit(dataset[1:,1])
+> dataset[1:,1]=e.transform(dataset[1:,1])
+> e=LabelEncoder()
+> e.fit(dataset[1:,2])
+> dataset[1:,2]=e.transform(dataset[1:,2])
+> e=LabelEncoder()
+> e.fit(dataset[1:,6])
+> dataset[1:,6]=e.transform(dataset[1:,6])
+> e=LabelEncoder()
+> e.fit(dataset[1:,8])
+> dataset[1:,8]=e.transform(dataset[1:,8])
+> e=LabelEncoder()
+> e.fit(dataset[1:,10])
+> dataset[1:,10]=e.transform(dataset[1:,10])
+> print(df)
+> df.to_csv('new_heart.csv')
+> ```
