@@ -174,17 +174,17 @@
 
 > ### 모델학습
 > > #### 케라스 순차 모델
-> > ```python
-> > model=Sequential()
-> > model.add(Dense(64, input_dim=11,activation='relu'))    
-> > model.add(Dense(32, activation='relu'))                
-> > model.add(Dense(16, activation='relu'))               
-> > model.add(Dense(1,activation='sigmoid'))
-> > ...(생략)
-> > hist=model.fit(X,Y,validation_split=0.20,epochs=350,batch_size=500,callbacks=[early_stopping_callback,checkpointer])
-> > ```
-> > output : 
-> > ```
+> >> ```python
+> > >model=Sequential()
+> > >model.add(Dense(64, input_dim=11,activation='relu'))    
+> > >model.add(Dense(32, activation='relu'))                
+> > >model.add(Dense(16, activation='relu'))               
+> > >model.add(Dense(1,activation='sigmoid'))
+> > >...(생략)
+> > >hist=model.fit(X,Y,validation_split=0.20,epochs=350,batch_size=500,callbacks=[early_stopping_callback,checkpointer])
+> > >```
+> > >output : 
+> > >```
 > > Epoch 00321: val_loss did not improve from 0.40818
 >> Epoch 322/350
 >> 734/734 [==============================] - 0s 7us/step - loss: 0.3141 - acc: 0.8774 - val_loss: 0.4153 - val_acc: 0.8098
