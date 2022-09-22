@@ -157,9 +157,25 @@
 > ```
 > <img src="https://user-images.githubusercontent.com/111839344/191793441-ccc14e60-19c2-4ad0-bf01-63c8d7edfcf2.png" width="250" height="400">
 
->
-
-
+## 데이터 훈련
+> ### 학습셋과 테스트 셋의 구분. 테스트셋 20%, 학습셋 80%
+> ```python
+> seed = 0
+> numpy.random.seed(seed)
+> tf.set_random_seed(3)
+> df_new=pd.read_csv('new_heart.csv',header=None)
+> dataset=df_new.values
+> X=dataset[2:,1:12]
+> Y=dataset[2:,12]
+> X_train,X_test,Y_train,Y_test=train_test_split(X,Y, test_size=0.2,random_state=seed)
+> print(X_train.shape)
+> print(X_test.shape)
+> ```
+> output : 
+> ```
+> (734, 11)
+> (184, 11)
+> ```
 
 
 
