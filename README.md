@@ -155,7 +155,7 @@
 > plt.figure(figsize=(5, 8))
 > sns.barplot(data=df_new3 , x="RestingECG", y="HeartDisease")
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191793441-ccc14e60-19c2-4ad0-bf01-63c8d7edfcf2.png" width="250" height="450">
+> <img src="https://user-images.githubusercontent.com/111839344/191793441-ccc14e60-19c2-4ad0-bf01-63c8d7edfcf2.png" width="250" height="400">
 
 >
 
