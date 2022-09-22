@@ -1,5 +1,5 @@
 # 머신러닝 심장질환 예측
-=============
+
 #### 자세한 코드는 [여기있습니다](https://github.com/yeol0129/xray_ResNet50_Pneumonia/blob/main/pneumonia_resnet50.ipynb)
 ## Data
 > ### heart.csv의 데이터 예
@@ -96,6 +96,6 @@
 > df_new3['HeartDisease'].value_counts().plot.pie(explode=[0,0.05],startangle=90, autopct='%0.1f%%',ax=ax,cmap='coolwarm_r')
 > plt.title("Heart Disease")
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="170" height="300">
+> <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="200" height="350">
 
 
