@@ -74,4 +74,14 @@
 > df.to_csv('new_heart.csv')
 > ```
 > <img src="https://user-images.githubusercontent.com/111839344/191789035-b026ac44-de24-4b5c-a3d4-354ebd3ffa24.png" width="650" height="250">
+> 숫자로 대체된 문자
+> ```
+> Sex : 0 = 여성, 1 = 남성
+> CPT :  0 = 무증상(ASY) , 1 = 이례적 협심증(ATA) , 2 = 비협심증 통증(NAP) , 3 = 일반적 협심증(TA)
+> RestingECG : 0 = LVH , 1 = Normal , 2 = ST
+> ExerciseAngina : 0 = N , 1 = Y
+> ST_Slope : 0 = Down , 1 = Flat , 2 = Up
+> ```
+
+
 
