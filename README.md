@@ -160,11 +160,6 @@
 ## 데이터 훈련
 > ### 학습셋과 테스트 셋의 구분. 테스트셋 20%, 학습셋 80%
 > ```python
-> seed = 0
-> numpy.random.seed(seed)
-> tf.set_random_seed(3)
-> df_new=pd.read_csv('new_heart.csv',header=None)
-> dataset=df_new.values
 > X=dataset[2:,1:12]
 > Y=dataset[2:,12]
 > X_train,X_test,Y_train,Y_test=train_test_split(X,Y, test_size=0.2,random_state=seed)
@@ -177,6 +172,31 @@
 > (184, 11)
 > ```
 
+> ### 모델학습
+> > #### 케라스 순차 모델
+> > ```python
+> > model=Sequential()
+> > model.add(Dense(64, input_dim=11,activation='relu'))    
+> > model.add(Dense(32, activation='relu'))                
+> > model.add(Dense(16, activation='relu'))               
+> > model.add(Dense(1,activation='sigmoid'))
+> > ...(생략)
+> > hist=model.fit(X,Y,validation_split=0.20,epochs=350,batch_size=500,callbacks=[early_stopping_callback,checkpointer])
+> > print("\n Accuracy:%.4f"%(model.evaluate(X,Y)[1]))  
+> > ```
+> > output : 
+> > ```
+> > Epoch 00321: val_loss did not improve from 0.40818
+>> Epoch 322/350
+>> 734/734 [==============================] - 0s 7us/step - loss: 0.3141 - acc: 0.8774 - val_loss: 0.4153 - val_acc: 0.8098
+>> 
+>> Epoch 00322: val_loss did not improve from 0.40818
+>> Epoch 323/350
+>> 734/734 [==============================] - 0s 8us/step - loss: 0.3148 - acc: 0.8692 - val_loss: 0.4127 - val_acc: 0.8152
+>> 
+>> Epoch 00323: val_loss did not improve from 0.40818
+>> 918/918 [==============================] - 0s 15us/step          
+>> ```
 
 
 
