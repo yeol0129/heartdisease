@@ -22,8 +22,9 @@
 > ST_Slope : 최대 운동 심전도의 기울기
 > HeartDisease : 심장병 진단(0 = False; 1 = True)
 > ```
+
 ## 사용 라이브러리
-> ```
+> ```python
 > from keras.models import Sequential
 > from keras.layers import Dense
 > from sklearn.model_selection import train_test_split
@@ -47,5 +48,6 @@
 > import os
 > import seaborn as sns
 > ```
+
 ## 데이터 전처리
 
