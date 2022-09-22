@@ -33,14 +33,12 @@
 > from sklearn.metrics import accuracy_score
 > from sklearn.metrics import classification_report
 > from sklearn.model_selection import StratifiedKFold
-
 > from sklearn.ensemble import RandomForestClassifier
 > from sklearn.linear_model import LogisticRegression
 > from sklearn.tree import DecisionTreeClassifier
 > from sklearn.naive_bayes import GaussianNB
 > from sklearn.neighbors import KNeighborsClassifier
 > from catboost import CatBoostClassifier
-
 > import numpy
 > import pandas as pd
 > import tensorflow as tf
