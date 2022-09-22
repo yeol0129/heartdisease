@@ -132,7 +132,9 @@
 > plt.legend(['HeartDisease', 'NO_HeartDisease'])
 > plt.show()
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191792306-6d60a8a8-004a-4b85-9f6a-e0379630cad0.png" width="400" height="240">
+> <img src="https://user-images.githubusercontent.com/111839344/191792306-6d60a8a8-004a-4b85-9f6a-e0379630cad0.png" width="425" height="240">
+
+> ### 성별과 심장병의 관계
 
 
 
