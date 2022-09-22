@@ -73,3 +73,5 @@
 > print(df)
 > df.to_csv('new_heart.csv')
 > ```
+> <img src="https://user-images.githubusercontent.com/111839344/191789035-b026ac44-de24-4b5c-a3d4-354ebd3ffa24.png" width="300" height="300">
+
