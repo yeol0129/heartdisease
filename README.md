@@ -119,7 +119,22 @@
 > grid.map(plt.hist,'Age',bins=10)
 > plt.show()
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191791687-58383c13-44cc-4bab-bf28-824d17389a9d.png" width="400" height="350">
+> <img src="https://user-images.githubusercontent.com/111839344/191791687-58383c13-44cc-4bab-bf28-824d17389a9d.png" width="425" height="350">
+
+> ### 콜레스테롤, Oldpeak과 심장병의 관계
+> ```python
+> fig, ax = plt.subplots(1, 2, figsize=(16, 8))
+> sns.kdeplot(df_new3[df_new3['HeartDisease']==1]['Cholesterol'], ax=ax[0])
+> sns.kdeplot(df_new3[df_new3['HeartDisease']==0]['Cholesterol'], ax=ax[0])
+> plt.legend(['HeartDisease', 'NO_HeartDisease'])
+> sns.kdeplot(df_new3[df_new3['HeartDisease']==1]['Oldpeak'], ax=ax[1])
+> sns.kdeplot(df_new3[df_new3['HeartDisease']==0]['Oldpeak'], ax=ax[1])
+> plt.legend(['HeartDisease', 'NO_HeartDisease'])
+> plt.show()
+> ```
+> <img src="https://user-images.githubusercontent.com/111839344/191792306-6d60a8a8-004a-4b85-9f6a-e0379630cad0.png" width="400" height="240">
+
+
 
 
 
