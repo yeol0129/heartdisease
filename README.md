@@ -108,7 +108,7 @@
 > <img src="https://user-images.githubusercontent.com/111839344/191790969-289c40dc-e801-4979-bbd7-787b7854796b.png" width="400" height="400">
 
 > ### 협심증 유발 운동, 가슴통증, 공복 시 혈당, 최대 운동 심전도 기울기, 나이와 심장병의 관계도
-> ```
+> ```python
 > f, ax = plt.subplots(2, 2, figsize=(16, 8))
 > sns.countplot('ExerciseAngina', hue='HeartDisease', data=df_new3,ax=ax[0,0])
 > sns.countplot('ChestPainType', hue='HeartDisease', data=df_new3, ax=ax[0,1])
@@ -119,6 +119,8 @@
 > grid.map(plt.hist,'Age',bins=10)
 > plt.show()
 > ```
+> <img src="https://user-images.githubusercontent.com/111839344/191791687-58383c13-44cc-4bab-bf28-824d17389a9d.png" width="400" height="350">
+
 
 
 
