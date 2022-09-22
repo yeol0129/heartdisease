@@ -173,7 +173,7 @@
 > ```
 
 > ### 모델학습
-> > #### 케라스 순차 모델
+> > ### 케라스 순차 모델
 > >> ```python
 > > >model=Sequential()
 > > >model.add(Dense(64, input_dim=11,activation='relu'))    
@@ -185,51 +185,82 @@
 > > >```
 > > >output : 
 > > >```
-> > Epoch 00321: val_loss did not improve from 0.40818
->> Epoch 322/350
->> 734/734 [==============================] - 0s 7us/step - loss: 0.3141 - acc: 0.8774 - val_loss: 0.4153 - val_acc: 0.8098
->> 
->> Epoch 00322: val_loss did not improve from 0.40818
->> Epoch 323/350
->> 734/734 [==============================] - 0s 8us/step - loss: 0.3148 - acc: 0.8692 - val_loss: 0.4127 - val_acc: 0.8152
->> 
->> Epoch 00323: val_loss did not improve from 0.40818
->> 918/918 [==============================] - 0s 15us/step          
->> ```
->> #### 케라스 모델 정확도와 손실 시각화
->> ```python
->> print("\n Accuracy:%.4f"%(model.evaluate(X,Y)[1]))  
->> y_vloss=hist.history['val_loss']
->> y_acc=hist.history['acc']       
->> x_len=numpy.arange(len(y_acc))
->> plt.plot(x_len,y_vloss,"o",c="red",markersize=3)
->> plt.plot(x_len,y_acc,"o",c="blue",markersize=3)
->> plt.ylim([0,1])
->> plt.show
->> ```
->> <img src="https://user-images.githubusercontent.com/111839344/191796153-d0819fb1-a2b0-4f2f-8267-2f11a0927e47.png" width="400" height="400">
->>
->> #### K겹 교차 검증 모델 (5겹)
->> ```python
->> n_fold=5
->> skf=StratifiedKFold(n_splits=n_fold,shuffle=True, random_state=seed)
->> ...
->> for train,test in skf.split(X,Y):
->>    model_k=Sequential()
->>    model_k.add(Dense(64, input_dim=11,activation='relu'))    
->>    model_k.add(Dense(32, activation='relu'))                 
->>    model_k.add(Dense(16, activation='relu'))                 
->>    model_k.add(Dense(1,activation='sigmoid'))
->> ...
->> model_k.fit(X[train],Y[train],epochs=100,batch_size=5)
->> ...
->> ```
->> output :
->> ```
->> Epoch 100/100
->> 735/735 [==============================] - 0s 160us/step - loss: 0.3351 - acc: 0.8463
->> 183/183 [==============================] - 0s 1ms/step
->> 
->> 5 Fold Accuracy: ['0.8641', '0.8098', '0.5543', '0.8579', '0.8579']
->> ```
+> > >Epoch 00321: val_loss did not improve from 0.40818
+>> >Epoch 322/350
+>> >734/734 [==============================] - 0s 7us/step - loss: 0.3141 - acc: 0.8774 - val_loss: 0.4153 - val_acc: 0.8098
+>>> 
+>>> Epoch 00322: val_loss did not improve from 0.40818
+>>> Epoch 323/350
+>>> 734/734 [==============================] - 0s 8us/step - loss: 0.3148 - acc: 0.8692 - val_loss: 0.4127 - val_acc: 0.8152
+>>> 
+>>> Epoch 00323: val_loss did not improve from 0.40818
+>>> 918/918 [==============================] - 0s 15us/step          
+>>> ```
+>>> ### 케라스 모델 정확도와 손실 시각화
+>>> ```python
+>>> print("\n Accuracy:%.4f"%(model.evaluate(X,Y)[1]))  
+>>> y_vloss=hist.history['val_loss']
+>>> y_acc=hist.history['acc']       
+>>> x_len=numpy.arange(len(y_acc))
+>>> plt.plot(x_len,y_vloss,"o",c="red",markersize=3)
+>>> plt.plot(x_len,y_acc,"o",c="blue",markersize=3)
+>>> plt.ylim([0,1])
+>>> plt.show
+>>> ```
+>>> <img src="https://user-images.githubusercontent.com/111839344/191796153-d0819fb1-a2b0-4f2f-8267-2f11a0927e47.png" width="400" height="400">
+>>>
+>> ### K겹 교차 검증 모델 (5겹)
+>>> ```python
+>>> n_fold=5
+>>> skf=StratifiedKFold(n_splits=n_fold,shuffle=True, random_state=seed)
+>>> ...
+>>> for train,test in skf.split(X,Y):
+>>>    model_k=Sequential()
+>>>    model_k.add(Dense(64, input_dim=11,activation='relu'))    
+>>>    model_k.add(Dense(32, activation='relu'))                 
+>>>    model_k.add(Dense(16, activation='relu'))                 
+>>>    model_k.add(Dense(1,activation='sigmoid'))
+>>> ...
+>>> model_k.fit(X[train],Y[train],epochs=100,batch_size=5)
+>>> ...
+>>> ```
+>>> output :
+>>> ```
+>>> Epoch 100/100
+>>> 735/735 [==============================] - 0s 160us/step - loss: 0.3351 - acc: 0.8463
+>>> 183/183 [==============================] - 0s 1ms/step
+>>> 
+>>> 5 Fold Accuracy: ['0.8641', '0.8098', '0.5543', '0.8579', '0.8579']
+>>> ```
+>> ### 로지스틱 회귀 모델
+>> > ```python
+>> > accuracies={}
+>>>lr = LogisticRegression()
+>>>lr.fit(X_train,Y_train)
+>>>```
+>>> ### 로지스틱 회귀 모델 성능평가
+>>>```python
+>>>lr_pred = lr.predict(X_test)
+>>>acc = lr.score(X_test,Y_test)
+>>>accuracies['Logistic Regression'] = acc
+>>>print('Classification report\n',classification_report(Y_test, lr_pred))
+>>>print("Accuracy of Logistic Regression: {:.2f}".format(acc))
+>>>```
+>>>output : 
+>>>```
+>>>Classification report
+>>>              precision    recall  f1-score   support
+>>>
+>>>          0       0.83      0.77      0.80        77
+>>>          1       0.84      0.89      0.86       107
+>>>
+>>>avg / total       0.84      0.84      0.84       184
+>>>
+>>>Accuracy of Logistic Regression: 0.84
+>>>```
 
+>> ### 가우시안 나이브 베이즈 모델
+>>> ```python
+>>> nb = GaussianNB()
+>>> nb.fit(X_train, Y_train)
+>>>```
