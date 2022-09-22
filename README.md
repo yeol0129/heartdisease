@@ -8,16 +8,14 @@
 > 40|M|ATA|140|289|0|Normal|172|N|0|Up|0
 > 49|F|NAP|160|180|0|Normal|156|N|1|Flat|1
 > 37|M|ATA|130|283|0|ST|98|N|0|Up|0
-Age : 나이
-Sex : 성별(0 : 여성; 1 : 남성)
-CPT : 가슴통증 유형
-(무증상(ASY) ; 이례적 협심증(ATA); 비협심증 통증(NAP);  일반적 협심증(TA))
-RestingBP : 평시 혈압
-Cholesterol : 혈중 콜레스테롤 농도
-FastingBS : 공복시 혈당 > 120mg/dl(0 = False; 1 = True)
-RestingECG : 안정 심전도 결과(좌심실 비대(LVH);  정상(Normal);  심전도 비정상(ST))
-MaxHR : 최대 심박수
-ExerciseAngina : 협심증 유발 운동
-Oldpeak : 비교적 안정되기까지 운동으로 유발되는 심전도
-ST_Slope : 최대 운동 심전도의 기울기
-HeartDisease : 심장병 진단(0 = False; 1 = True)
+> ```
+> Age : 나이 , Sex : 성별(0 : 여성; 1 : 남성) 
+> CPT : 가슴통증 유형(무증상(ASY) ; 이례적 협심증(ATA); 비협심증 통증(NAP);  일반적 협심증(TA))
+> RestingBP : 평상시 혈압 , Cholesterol : 혈중 콜레스테롤 농도
+> FastingBS : 공복시 혈당 > 120mg/dl(0 = False; 1 = True)
+> RestingECG : 안정 심전도 결과(좌심실 비대(LVH);  정상(Normal);  심전도 비정상(ST))
+> MaxHR : 최대 심박수 , ExerciseAngina : 협심증 유발 운동
+> Oldpeak : 비교적 안정되기까지 운동으로 유발되는 심전도
+> ST_Slope : 최대 운동 심전도의 기울기
+> HeartDisease : 심장병 진단(0 = False; 1 = True)
+> ```
