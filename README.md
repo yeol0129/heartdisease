@@ -135,6 +135,31 @@
 > <img src="https://user-images.githubusercontent.com/111839344/191792306-6d60a8a8-004a-4b85-9f6a-e0379630cad0.png" width="425" height="240">
 
 > ### 성별과 심장병의 관계
+> ```python
+> print(df_new3["Sex"].value_counts())
+> plt.figure(figsize=(8,8))
+> sns.countplot('HeartDisease', hue='Sex', data=df_new3)
+> ```
+> <img src="https://user-images.githubusercontent.com/111839344/191792871-9de6eb3f-67b7-484e-a223-c54287aee4dd.png" width="400" height="400">
+
+> ### 최대심박수, 평상시 혈압과 심장병의 관계
+> ```python
+> fig, ax = plt.subplots(1, 2, figsize=(16, 8))
+> sns.boxplot(data=df_new3, x="HeartDisease", y="MaxHR",ax=ax[0])
+> sns.boxplot(data=df_new3, x="HeartDisease", y="RestingBP",ax=ax[1])
+> ```
+> <img src="https://user-images.githubusercontent.com/111839344/191793200-37141410-e793-4bef-a071-70b7e75455bb.png" width="425" height="240">
+
+> ### 안정 심전도와 심장병의 관계
+> ```python
+> plt.figure(figsize=(5, 8))
+> sns.barplot(data=df_new3 , x="RestingECG", y="HeartDisease")
+> ```
+> <img src="https://user-images.githubusercontent.com/111839344/191793441-ccc14e60-19c2-4ad0-bf01-63c8d7edfcf2.png" width="250" height="450">
+
+>
+
+
 
 
 
