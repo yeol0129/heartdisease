@@ -98,4 +98,14 @@
 > ```
 > <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="200" height="350">
 
+> ### Heatmap 관계도
+> ```python
+> colormap=plt.cm.gist_heat
+> plt.figure(figsize=(12,12))
+> sns.heatmap(df_new3.corr(),linewidths=0.1,vmax=0.5,cmap=colormap,linecolor='white',annot =True)
+> plt.show()
+> ```
+> <img src="https://user-images.githubusercontent.com/111839344/191790969-289c40dc-e801-4979-bbd7-787b7854796b.png" width="300" height="300">
+
+
 
