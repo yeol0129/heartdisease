@@ -1,4 +1,4 @@
-# 머신러닝 심장질환 예측
+# Heart diease prediction model 
 >###### 제작 이유 : 
 >###### 코로나 19의 부작용으로 인해 심장 질환이 나오는 경우도 종종 나오고 있습니다.
 >###### 저 또한 코로나19 백신 주사를 맞은 후
@@ -7,9 +7,9 @@
 >###### 아니지만, 심장질환 환자의 데이터를 분석 후 예측하는 모델을 제작하였습니다.
 
 
-#### 자세한 코드는 [여기있습니다](https://github.com/yeol0129/xray_ResNet50_Pneumonia/blob/main/pneumonia_resnet50.ipynb)
+#### code : [click here](https://github.com/yeol0129/xray_ResNet50_Pneumonia/blob/main/pneumonia_resnet50.ipynb)
 ## Data
-> ### heart.csv의 데이터 예
+> ### example of heart.csv
 > Age|Sex|ChestPainType|RestingBP|Cholesterol|FastingBS|RestingECG|MaxHR|ExerciseAngina|Oldpeak|ST_Slope|HeartDisease
 > ---|---|---|---|---|---|---|---|---|---|---|---|
 > 40|M|ATA|140|289|0|Normal|172|N|0|Up|0
@@ -30,7 +30,7 @@
 > HeartDisease : 심장병 진단(0 = False; 1 = True)
 > ```
 
-## 사용 라이브러리
+## 사용 라이브러리(Libraries)
 > ```python
 > from keras.models import Sequential
 > from keras.layers import Dense
@@ -54,8 +54,9 @@
 > import seaborn as sns
 > ```
 
-## 데이터 전처리
-> ### 데이터 불러오기
+## 데이터 전처리(Data preprocessing)
+Python 
+> ### 데이터 불러오기(Load data)
 > ```python
 >  df = pd.read_csv('heart.csv',index_col=None,header=None)
 > ```
