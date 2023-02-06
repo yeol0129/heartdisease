@@ -340,6 +340,7 @@ They are letters converted into numbers.
 > dtc = DecisionTreeClassifier()
 > dtc.fit(X_train, Y_train)
 > ```
+>
 > </details>
 > 
 > ### 결정트리 분류 모델 성능평가 output : 
@@ -361,42 +362,45 @@ They are letters converted into numbers.
  >knn = KNeighborsClassifier(n_neighbors=10)
 >knn.fit(X_train , Y_train)
 >```
+>
 > </details>
 > 
->> ### K-NN 분류 모델 성능평가 output :
->> ```
->> Classification report
->>              precision    recall  f1-score   support
->>
->>          0       0.62      0.71      0.67        77
->>          1       0.77      0.69      0.73       107
->>
->>avg / total       0.71      0.70      0.70       184
->>
->>Accuracy of KNN: 0.70
->> ```
-> ### CatBoost 분류 모델
+### K-NN 분류 모델 성능평가 output :
+> ```
+> Classification report
+>              precision    recall  f1-score   support
+>
+>          0       0.62      0.71      0.67        77
+>          1       0.77      0.69      0.73       107
+>
+>avg / total       0.71      0.70      0.70       184
+>
+>Accuracy of KNN: 0.70
+> ```
+ ### CatBoost 분류 모델
 > <details>
 > <summary>open code</summary>
 > ```python
 > cb = CatBoostClassifier(iterations=100)
 > cb.fit(X_train, Y_train)
-> ```
-> </details>
+>```
+>
+ > </details>
 > 
->> ### CatBoost 분류 모델 성능 평가 output : 
->> ```
->> Classification report
->>              precision    recall  f1-score   support
->>
->>          0       0.87      0.79      0.83        77
->>          1       0.86      0.92      0.89       107
->>
->>avg / total       0.86      0.86      0.86       184
->>
->>Accuracy of CatBoostClassifier: 0.86
->> ```
+ ### CatBoost 분류 모델 성능 평가 output : 
+> ```
+> Classification report
+>              precision    recall  f1-score   support
+>
+>          0       0.87      0.79      0.83        77
+>          1       0.86      0.92      0.89       107
+>
+>avg / total       0.86      0.86      0.86       184
+>
+>Accuracy of CatBoostClassifier: 0.86
+> ```
  ### K 교차 검증 모델을 이용해 가상환자 데이터의 심장질환 확률 예측
+ 
  <details>
  <summary>open code</summary>
  ```python
