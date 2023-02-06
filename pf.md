@@ -51,7 +51,7 @@ They are letters converted into numbers.
 > ```
 
 ## Data visualization
-### 심장병 환자수 시각화
+### Visualization of Heart Disease Number
 >
 > <details>
 > <summary>open code</summary>
@@ -71,7 +71,7 @@ They are letters converted into numbers.
 
 <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="250" height="400">
 
-### Heatmap 관계도
+### Heatmap
 >
 > <details>
 > <summary>open code</summary>
@@ -87,7 +87,7 @@ They are letters converted into numbers.
  
 <img src="https://user-images.githubusercontent.com/111839344/191790969-289c40dc-e801-4979-bbd7-787b7854796b.png" width="400" height="400">
 
-### 협심증 유발 운동, 가슴통증, 공복 시 혈당, 최대 운동 심전도 기울기, 나이와 심장병의 관계도
+### Relationship between angina-inducing exercise, chest pain, fasting blood sugar, maximum exercise ECG slope, age and heart disease
 >
 > <details>
 > <summary>open code</summary>
@@ -108,7 +108,7 @@ They are letters converted into numbers.
 
 <img src="https://user-images.githubusercontent.com/111839344/191791687-58383c13-44cc-4bab-bf28-824d17389a9d.png" width="425" height="350">
 
-### 콜레스테롤, Oldpeak과 심장병의 관계
+### Relationship between cholesterol, oldpeak and heart disease
 >
 > <details>
 > <summary>open code</summary>
@@ -128,7 +128,7 @@ They are letters converted into numbers.
  
 <img src="https://user-images.githubusercontent.com/111839344/191792306-6d60a8a8-004a-4b85-9f6a-e0379630cad0.png" width="425" height="240">
 
-### 성별과 심장병의 관계
+### Relationship between sex and heart disease
 >
 > <details>
 > <summary>open code</summary>
@@ -142,7 +142,7 @@ They are letters converted into numbers.
 > </details>
 <img src="https://user-images.githubusercontent.com/111839344/191792871-9de6eb3f-67b7-484e-a223-c54287aee4dd.png" width="400" height="400">
 
-### 최대심박수, 평상시 혈압과 심장병의 관계
+### Relationship between maxHR, restingBP and heart disease
 >
 > <details>
 > <summary>open code</summary>
@@ -156,7 +156,7 @@ They are letters converted into numbers.
 > </details>
 <img src="https://user-images.githubusercontent.com/111839344/191793200-37141410-e793-4bef-a071-70b7e75455bb.png" width="425" height="240">
 
-### 안정 심전도와 심장병의 관계
+### Relationship between restingECG and heart disease
 > <details>
 > <summary>open code</summary>
 >
