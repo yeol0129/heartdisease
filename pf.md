@@ -207,136 +207,162 @@ They are letters converted into numbers.
 > </details>
 > 
  > >output : 
- > >```
- > >Epoch 00321: val_loss did not improve from 0.40818
-> >Epoch 322/350
-> >734/734 [==============================] - 0s 7us/step - loss: 0.3141 - acc: 0.8774 - val_loss: 0.4153 - val_acc: 0.8098
->> 
->> Epoch 00322: val_loss did not improve from 0.40818
->> Epoch 323/350
->> 734/734 [==============================] - 0s 8us/step - loss: 0.3148 - acc: 0.8692 - val_loss: 0.4127 - val_acc: 0.8152
->> 
->> Epoch 00323: val_loss did not improve from 0.40818
->> 918/918 [==============================] - 0s 15us/step          
->> ```
->> ### 케라스 모델 정확도와 손실 시각화
->> ```python
->> print("\n Accuracy:%.4f"%(model.evaluate(X,Y)[1]))  
->> y_vloss=hist.history['val_loss']
->> y_acc=hist.history['acc']       
->> x_len=numpy.arange(len(y_acc))
->> plt.plot(x_len,y_vloss,"o",c="red",markersize=3)
->> plt.plot(x_len,y_acc,"o",c="blue",markersize=3)
->> plt.ylim([0,1])
->> plt.show
->> ```
->> <img src="https://user-images.githubusercontent.com/111839344/191796153-d0819fb1-a2b0-4f2f-8267-2f11a0927e47.png" width="400" height="400">
->>
-> ### K겹 교차 검증 모델 (5겹)
->> ```python
->> n_fold=5
->> skf=StratifiedKFold(n_splits=n_fold,shuffle=True, random_state=seed)
->> ...
->> for train,test in skf.split(X,Y):
->>    model_k=Sequential()
->>    model_k.add(Dense(64, input_dim=11,activation='relu'))    
->>    model_k.add(Dense(32, activation='relu'))                 
->>    model_k.add(Dense(16, activation='relu'))                 
->>    model_k.add(Dense(1,activation='sigmoid'))
->> ...
->> model_k.fit(X[train],Y[train],epochs=100,batch_size=5)
->> ...
->> ```
->> output :
->> ```
->> Epoch 100/100
->> 735/735 [==============================] - 0s 160us/step - loss: 0.3351 - acc: 0.8463
->> 183/183 [==============================] - 0s 1ms/step
->> 
->> 5 Fold Accuracy: ['0.8641', '0.8098', '0.5543', '0.8579', '0.8579']
->> ```
-> ### 로지스틱 회귀 모델
-> > ```python
-> > accuracies={}
->>lr = LogisticRegression()
->>lr.fit(X_train,Y_train)
->>```
->> ### 로지스틱 회귀 모델 성능평가
->>```python
->>lr_pred = lr.predict(X_test)
->>acc = lr.score(X_test,Y_test)
->>accuracies['Logistic Regression'] = acc
->>print('Classification report\n',classification_report(Y_test, lr_pred))
->>print("Accuracy of Logistic Regression: {:.2f}".format(acc))
->>```
->>output : 
->>```
->>Classification report
->>              precision    recall  f1-score   support
->>
->>          0       0.83      0.77      0.80        77
->>          1       0.84      0.89      0.86       107
->>
->>avg / total       0.84      0.84      0.84       184
->>
->>Accuracy of Logistic Regression: 0.84
->>```
->> ### 가우시안 나이브 베이즈 모델
->> ```python
->> nb = GaussianNB()
->> nb.fit(X_train, Y_train)
->>```
->> ### 가우시안 나이브 베이즈 모델 성능 평가 output : 
->> ```
->>Classification report
->>              precision    recall  f1-score   support
->>
->>          0       0.83      0.81      0.82        77
->>          1       0.86      0.88      0.87       107
->>
->>avg / total       0.85      0.85      0.85       184
->>
->>Accuracy of Naive Bayes: 0.85
->>```
-> ### 랜덤포레스트 분류 모델
->> ```python
->> rfc=RandomForestClassifier()
->> rfc.fit(X_train, Y_train)
->> ```
->> ### 랜덤포레스트 분류 모델 성능평가 output : 
->> ```
->> Classification report
->>              precision    recall  f1-score   support
->>
->>          0       0.85      0.81      0.83        77
->>          1       0.86      0.90      0.88       107
->>
->>avg / total       0.86      0.86      0.86       184
->>
->>Accuracy of Random Forest Classifier: 0.86
->> ```
-> ### 결정트리 분류 모델
->> ```python
->> dtc = DecisionTreeClassifier()
->> dtc.fit(X_train, Y_train)
->> ```
->> ### 결정트리 분류 모델 성능평가 output : 
->>```
->>Classification report
->>              precision    recall  f1-score   support
->>
->>          0       0.67      0.81      0.73        77
->>          1       0.84      0.72      0.77       107
->>
->>avg / total       0.77      0.76      0.76       184
->>
->>Accuracy of Decision Tree Classifier: 0.76
->>```
-> ### K-NN 분류 모델
-> >```python
-> >knn = KNeighborsClassifier(n_neighbors=10)
->>knn.fit(X_train , Y_train)
->>```
+  >```
+  >Epoch 00321: val_loss did not improve from 0.40818
+ >Epoch 322/350
+ >734/734 [==============================] - 0s 7us/step - loss: 0.3141 - acc: 0.8774 - val_loss: 0.4153 - val_acc: 0.8098
+> 
+> Epoch 00322: val_loss did not improve from 0.40818
+> Epoch 323/350
+> 734/734 [==============================] - 0s 8us/step - loss: 0.3148 - acc: 0.8692 - val_loss: 0.4127 - val_acc: 0.8152
+> 
+> Epoch 00323: val_loss did not improve from 0.40818
+> 918/918 [==============================] - 0s 15us/step          
+> ```
+> <img src="https://user-images.githubusercontent.com/111839344/191796153-d0819fb1-a2b0-4f2f-8267-2f11a0927e47.png" width="400" height="400">
+>
+### K-fold cross validation
+> <details>
+> <summary>open code</summary>
+>
+> ```python
+> n_fold=5
+> skf=StratifiedKFold(n_splits=n_fold,shuffle=True, random_state=seed)
+> ...
+> for train,test in skf.split(X,Y):
+>    model_k=Sequential()
+>    model_k.add(Dense(64, input_dim=11,activation='relu'))    
+>    model_k.add(Dense(32, activation='relu'))                 
+>    model_k.add(Dense(16, activation='relu'))                 
+>    model_k.add(Dense(1,activation='sigmoid'))
+> ...
+> model_k.fit(X[train],Y[train],epochs=100,batch_size=5)
+> ...
+> ```
+>
+> </details>
+> 
+> output :
+> ```
+> Epoch 100/100
+> 735/735 [==============================] - 0s 160us/step - loss: 0.3351 - acc: 0.8463
+> 183/183 [==============================] - 0s 1ms/step
+> 
+> 5 Fold Accuracy: ['0.8641', '0.8098', '0.5543', '0.8579', '0.8579']
+> ```
+### Logistic regression model
+> <details>
+> <summary>open code</summary>
+>
+>```python
+> accuracies={}
+>lr = LogisticRegression()
+>lr.fit(X_train,Y_train)
+>```
+>
+> </details>
+> 
+### Logistic regression model evaluation
+> <details>
+> <summary>open code</summary>
+>
+>```python
+>lr_pred = lr.predict(X_test)
+>acc = lr.score(X_test,Y_test)
+>accuracies['Logistic Regression'] = acc
+>print('Classification report\n',classification_report(Y_test, lr_pred))
+>print("Accuracy of Logistic Regression: {:.2f}".format(acc))
+>```
+>
+> </details>
+> 
+>output : 
+>```
+>Classification report
+>              precision    recall  f1-score   support
+>
+>          0       0.83      0.77      0.80        77
+>          1       0.84      0.89      0.86       107
+>
+>avg / total       0.84      0.84      0.84       184
+>
+>Accuracy of Logistic Regression: 0.84
+>```
+### Naive Bayes classifier
+> <details>
+> <summary>open code</summary>
+>
+> ```python
+> nb = GaussianNB()
+> nb.fit(X_train, Y_train)
+>```
+>
+> </details>
+> 
+### Naive Bayes classifier evaluation output : 
+> ```
+>Classification report
+>              precision    recall  f1-score   support
+>
+>          0       0.83      0.81      0.82        77
+>          1       0.86      0.88      0.87       107
+>
+>avg / total       0.85      0.85      0.85       184
+>
+>Accuracy of Naive Bayes: 0.85
+>```
+### Random forest model
+> <details>
+> <summary>open code</summary>
+>
+> ```python
+> rfc=RandomForestClassifier()
+> rfc.fit(X_train, Y_train)
+> ```
+> </details>
+> 
+> ### Random forest evaluation output : 
+> ```
+> Classification report
+>              precision    recall  f1-score   support
+>
+>          0       0.85      0.81      0.83        77
+>          1       0.86      0.90      0.88       107
+>
+>avg / total       0.86      0.86      0.86       184
+>
+>Accuracy of Random Forest Classifier: 0.86
+> ```
+ ### 결정트리 분류 모델
+> <details>
+> <summary>open code</summary>
+> ```python
+> dtc = DecisionTreeClassifier()
+> dtc.fit(X_train, Y_train)
+> ```
+> </details>
+> 
+> ### 결정트리 분류 모델 성능평가 output : 
+>```
+>Classification report
+>              precision    recall  f1-score   support
+>
+>          0       0.67      0.81      0.73        77
+>          1       0.84      0.72      0.77       107
+>
+>avg / total       0.77      0.76      0.76       184
+>
+>Accuracy of Decision Tree Classifier: 0.76
+>```
+### K-NN 분류 모델
+> <details>
+> <summary>open code</summary>
+ >```python
+ >knn = KNeighborsClassifier(n_neighbors=10)
+>knn.fit(X_train , Y_train)
+>```
+> </details>
+> 
 >> ### K-NN 분류 모델 성능평가 output :
 >> ```
 >> Classification report
@@ -350,10 +376,14 @@ They are letters converted into numbers.
 >>Accuracy of KNN: 0.70
 >> ```
 > ### CatBoost 분류 모델
->> ```python
->> cb = CatBoostClassifier(iterations=100)
->> cb.fit(X_train, Y_train)
->> ```
+> <details>
+> <summary>open code</summary>
+> ```python
+> cb = CatBoostClassifier(iterations=100)
+> cb.fit(X_train, Y_train)
+> ```
+> </details>
+> 
 >> ### CatBoost 분류 모델 성능 평가 output : 
 >> ```
 >> Classification report
@@ -367,6 +397,8 @@ They are letters converted into numbers.
 >>Accuracy of CatBoostClassifier: 0.86
 >> ```
  ### K 교차 검증 모델을 이용해 가상환자 데이터의 심장질환 확률 예측
+ <details>
+ <summary>open code</summary>
  ```python
  #협심증유발운동 유, 50대 이상, 남성, 최대심박수 140이하, 콜레스테롤 낮음
 #가슴통증 없음, oldpeak 0이상, 공복시혈당 True일경우 심장질환확률 높을것으로 예상 
@@ -378,6 +410,8 @@ pred = model_k.predict(patient)
 # 예측결과 출력
 print(pred*100)
 ```
+ </details>
+
 output : 
 ```
 [[94.81547]]
