@@ -18,6 +18,7 @@
 
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > dataset=df.values
 > e=LabelEncoder()
@@ -38,6 +39,7 @@
 > print(df)
 > df.to_csv('new_heart.csv')
 > ```
+>
 > </details>
 
 > <img src="https://user-images.githubusercontent.com/111839344/191789035-b026ac44-de24-4b5c-a3d4-354ebd3ffa24.png" width="650" height="250">
