@@ -50,8 +50,11 @@ They are letters converted into numbers.
 > ST_Slope : 0 = Down, 1 = Flat, 2 = Up
 > ```
 
-## 데이터 시각화
-> ### 심장병 환자수 시각화
+## Data visualization
+### 심장병 환자수 시각화
+>
+> <details>
+> <summary>open code</summary>
 > ```python
 > df_new3=pd.read_csv('new_heart2.csv')
 > print(df_new3["HeartDisease"].value_counts())
@@ -62,18 +65,30 @@ They are letters converted into numbers.
 > df_new3['HeartDisease'].value_counts().plot.pie(explode=[0,0.05],startangle=90, autopct='%0.1f%%',ax=ax,cmap='coolwarm_r')
 > plt.title("Heart Disease")
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="250" height="400">
+> 
+> </details>
 
-> ### Heatmap 관계도
+<img src="https://user-images.githubusercontent.com/111839344/191790319-f333206c-6db7-446a-a9a1-26ceb28405b5.png" width="250" height="400">
+
+### Heatmap 관계도
+>
+> <details>
+> <summary>open code</summary>
 > ```python
 > colormap=plt.cm.gist_heat
 > plt.figure(figsize=(12,12))
 > sns.heatmap(df_new3.corr(),linewidths=0.1,vmax=0.5,cmap=colormap,linecolor='white',annot =True)
 > plt.show()
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191790969-289c40dc-e801-4979-bbd7-787b7854796b.png" width="400" height="400">
+>
+> </details>
+ 
+<img src="https://user-images.githubusercontent.com/111839344/191790969-289c40dc-e801-4979-bbd7-787b7854796b.png" width="400" height="400">
 
-> ### 협심증 유발 운동, 가슴통증, 공복 시 혈당, 최대 운동 심전도 기울기, 나이와 심장병의 관계도
+### 협심증 유발 운동, 가슴통증, 공복 시 혈당, 최대 운동 심전도 기울기, 나이와 심장병의 관계도
+>
+> <details>
+> <summary>open code</summary>
 > ```python
 > f, ax = plt.subplots(2, 2, figsize=(16, 8))
 > sns.countplot('ExerciseAngina', hue='HeartDisease', data=df_new3,ax=ax[0,0])
@@ -85,9 +100,15 @@ They are letters converted into numbers.
 > grid.map(plt.hist,'Age',bins=10)
 > plt.show()
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191791687-58383c13-44cc-4bab-bf28-824d17389a9d.png" width="425" height="350">
+>
+> </details>
 
-> ### 콜레스테롤, Oldpeak과 심장병의 관계
+<img src="https://user-images.githubusercontent.com/111839344/191791687-58383c13-44cc-4bab-bf28-824d17389a9d.png" width="425" height="350">
+
+### 콜레스테롤, Oldpeak과 심장병의 관계
+>
+> <details>
+> <summary>open code</summary>
 > ```python
 > fig, ax = plt.subplots(1, 2, figsize=(16, 8))
 > sns.kdeplot(df_new3[df_new3['HeartDisease']==1]['Cholesterol'], ax=ax[0])
@@ -98,23 +119,36 @@ They are letters converted into numbers.
 > plt.legend(['HeartDisease', 'NO_HeartDisease'])
 > plt.show()
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191792306-6d60a8a8-004a-4b85-9f6a-e0379630cad0.png" width="425" height="240">
+>
+> </details>
+ 
+<img src="https://user-images.githubusercontent.com/111839344/191792306-6d60a8a8-004a-4b85-9f6a-e0379630cad0.png" width="425" height="240">
 
-> ### 성별과 심장병의 관계
+### 성별과 심장병의 관계
+>
+> <details>
+> <summary>open code</summary>
 > ```python
 > print(df_new3["Sex"].value_counts())
 > plt.figure(figsize=(8,8))
 > sns.countplot('HeartDisease', hue='Sex', data=df_new3)
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191792871-9de6eb3f-67b7-484e-a223-c54287aee4dd.png" width="400" height="400">
+>
+> </details>
+<img src="https://user-images.githubusercontent.com/111839344/191792871-9de6eb3f-67b7-484e-a223-c54287aee4dd.png" width="400" height="400">
 
-> ### 최대심박수, 평상시 혈압과 심장병의 관계
+### 최대심박수, 평상시 혈압과 심장병의 관계
+>
+> <details>
+> <summary>open code</summary>
 > ```python
 > fig, ax = plt.subplots(1, 2, figsize=(16, 8))
 > sns.boxplot(data=df_new3, x="HeartDisease", y="MaxHR",ax=ax[0])
 > sns.boxplot(data=df_new3, x="HeartDisease", y="RestingBP",ax=ax[1])
 > ```
-> <img src="https://user-images.githubusercontent.com/111839344/191793200-37141410-e793-4bef-a071-70b7e75455bb.png" width="425" height="240">
+>
+> </details>
+<img src="https://user-images.githubusercontent.com/111839344/191793200-37141410-e793-4bef-a071-70b7e75455bb.png" width="425" height="240">
 
 > ### 안정 심전도와 심장병의 관계
 > ```python
