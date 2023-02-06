@@ -321,7 +321,7 @@ They are letters converted into numbers.
 > ```
 > </details>
 > 
-> ### Random forest evaluation output : 
+### Random forest evaluation output : 
 > ```
 > Classification report
 >              precision    recall  f1-score   support
@@ -333,7 +333,7 @@ They are letters converted into numbers.
 >
 >Accuracy of Random Forest Classifier: 0.86
 > ```
- ### 결정트리 분류 모델
+ ### Decision Tree model
 > <details>
 > <summary>open code</summary>
 >
@@ -344,7 +344,7 @@ They are letters converted into numbers.
 >
 > </details>
 > 
-> ### 결정트리 분류 모델 성능평가 output : 
+### Decision Tree evaluation output  : 
 >```
 >Classification report
 >              precision    recall  f1-score   support
@@ -356,7 +356,7 @@ They are letters converted into numbers.
 >
 >Accuracy of Decision Tree Classifier: 0.76
 >```
-### K-NN 분류 모델
+### K Neighbors model
 >
 > <details>
  > <summary>open code</summary>
@@ -368,7 +368,7 @@ They are letters converted into numbers.
 >
 > </details>
 > 
-### K-NN 분류 모델 성능평가 output :
+### K Neighbors evaluation output :
 > ```
 > Classification report
 >              precision    recall  f1-score   support
@@ -380,18 +380,19 @@ They are letters converted into numbers.
 >
 >Accuracy of KNN: 0.70
 > ```
- ### CatBoost 분류 모델
+ ### CatBoost model
 >
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > cb = CatBoostClassifier(iterations=100)
 > cb.fit(X_train, Y_train)
 >```
 >
- > </details>
+> </details>
 > 
- ### CatBoost 분류 모델 성능 평가 output : 
+ ### CatBoost model evaluation output : 
 > ```
 > Classification report
 >              precision    recall  f1-score   support
@@ -403,20 +404,17 @@ They are letters converted into numbers.
 >
 >Accuracy of CatBoostClassifier: 0.86
 > ```
- ### K 교차 검증 모델을 이용해 가상환자 데이터의 심장질환 확률 예측
+ ### Predicting Heart Disease Probability from Virtual Patient Data Using K Cross-validation Models
  
  <details>
  <summary>open code</summary>
  
  ```python
- #협심증유발운동 유, 50대 이상, 남성, 최대심박수 140이하, 콜레스테롤 낮음
-#가슴통증 없음, oldpeak 0이상, 공복시혈당 True일경우 심장질환확률 높을것으로 예상 
-# 가상의 환자 데이터 입력
 #Age,Sex,ChestPainType,RestingBP,Cholesterol,FastingBS,RestingECG,MaxHR,ExerciseAngina,Oldpeak,ST_Slope,HeartDisease
 patient = numpy.array([[55,1,0,160,120,1,0,130,1,1,0]])
-# k교차검증모델로 예측
+
 pred = model_k.predict(patient)
-# 예측결과 출력
+
 print(pred*100)
 ```
  
