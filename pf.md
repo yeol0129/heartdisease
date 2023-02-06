@@ -9,12 +9,8 @@
 > 49|F|NAP|160|180|0|Normal|156|N|1|Flat|1
 > 37|M|ATA|130|283|0|ST|98|N|0|Up|0
 
-## 데이터 전처리(Data preprocessing)
-> ### 데이터 불러오기(Load data)
-> ```python
->  df = pd.read_csv('heart.csv',index_col=None,header=None)
-> ```
-> ### LabelEncoder를 사용하여 DataSet에 있는 글자를 숫자로 변형하고 새롭게 저장합니다.
+## Data preprocessing
+### Use the label encoder to change letters into numbers.
 >
 > <details>
 > <summary>open code</summary>
@@ -42,7 +38,7 @@
 >
 > </details>
 >
-> <img src="https://user-images.githubusercontent.com/111839344/191789035-b026ac44-de24-4b5c-a3d4-354ebd3ffa24.png" width="650" height="250">
+<img src="https://user-images.githubusercontent.com/111839344/191789035-b026ac44-de24-4b5c-a3d4-354ebd3ffa24.png" width="650" height="250">
 > 
 > 숫자로 대체된 문자
 > ```
