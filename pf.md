@@ -55,6 +55,7 @@ They are letters converted into numbers.
 >
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > df_new3=pd.read_csv('new_heart2.csv')
 > print(df_new3["HeartDisease"].value_counts())
@@ -74,6 +75,7 @@ They are letters converted into numbers.
 >
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > colormap=plt.cm.gist_heat
 > plt.figure(figsize=(12,12))
@@ -89,6 +91,7 @@ They are letters converted into numbers.
 >
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > f, ax = plt.subplots(2, 2, figsize=(16, 8))
 > sns.countplot('ExerciseAngina', hue='HeartDisease', data=df_new3,ax=ax[0,0])
@@ -109,6 +112,7 @@ They are letters converted into numbers.
 >
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > fig, ax = plt.subplots(1, 2, figsize=(16, 8))
 > sns.kdeplot(df_new3[df_new3['HeartDisease']==1]['Cholesterol'], ax=ax[0])
@@ -128,6 +132,7 @@ They are letters converted into numbers.
 >
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > print(df_new3["Sex"].value_counts())
 > plt.figure(figsize=(8,8))
@@ -141,6 +146,7 @@ They are letters converted into numbers.
 >
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > fig, ax = plt.subplots(1, 2, figsize=(16, 8))
 > sns.boxplot(data=df_new3, x="HeartDisease", y="MaxHR",ax=ax[0])
