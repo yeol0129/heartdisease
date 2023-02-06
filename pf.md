@@ -16,8 +16,8 @@
 > ```
 > ### LabelEncoder를 사용하여 DataSet에 있는 글자를 숫자로 변형하고 새롭게 저장합니다.
 
-<details>
-<summary>open code</summary>
+> <details>
+> <summary>open code</summary>
 > ```python
 > dataset=df.values
 > e=LabelEncoder()
@@ -38,7 +38,7 @@
 > print(df)
 > df.to_csv('new_heart.csv')
 > ```
-</details>
+> </details>
 
 > <img src="https://user-images.githubusercontent.com/111839344/191789035-b026ac44-de24-4b5c-a3d4-354ebd3ffa24.png" width="650" height="250">
 > 
