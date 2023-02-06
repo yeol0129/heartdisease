@@ -156,11 +156,16 @@ They are letters converted into numbers.
 > </details>
 <img src="https://user-images.githubusercontent.com/111839344/191793200-37141410-e793-4bef-a071-70b7e75455bb.png" width="425" height="240">
 
-> ### 안정 심전도와 심장병의 관계
+### 안정 심전도와 심장병의 관계
+> <details>
+> <summary>open code</summary>
+>
 > ```python
 > plt.figure(figsize=(5, 8))
 > sns.barplot(data=df_new3 , x="RestingECG", y="HeartDisease")
 > ```
+>
+> </details>
 > <img src="https://user-images.githubusercontent.com/111839344/191793441-ccc14e60-19c2-4ad0-bf01-63c8d7edfcf2.png" width="250" height="400">
 
 ## 데이터 훈련
