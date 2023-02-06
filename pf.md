@@ -336,6 +336,7 @@ They are letters converted into numbers.
  ### 결정트리 분류 모델
 > <details>
 > <summary>open code</summary>
+>
 > ```python
 > dtc = DecisionTreeClassifier()
 > dtc.fit(X_train, Y_train)
@@ -356,8 +357,10 @@ They are letters converted into numbers.
 >Accuracy of Decision Tree Classifier: 0.76
 >```
 ### K-NN 분류 모델
+>
 > <details>
-> <summary>open code</summary>
+ > <summary>open code</summary>
+ >
  >```python
  >knn = KNeighborsClassifier(n_neighbors=10)
 >knn.fit(X_train , Y_train)
@@ -378,6 +381,7 @@ They are letters converted into numbers.
 >Accuracy of KNN: 0.70
 > ```
  ### CatBoost 분류 모델
+>
 > <details>
 > <summary>open code</summary>
 > ```python
@@ -403,6 +407,7 @@ They are letters converted into numbers.
  
  <details>
  <summary>open code</summary>
+ 
  ```python
  #협심증유발운동 유, 50대 이상, 남성, 최대심박수 140이하, 콜레스테롤 낮음
 #가슴통증 없음, oldpeak 0이상, 공복시혈당 True일경우 심장질환확률 높을것으로 예상 
@@ -414,6 +419,7 @@ pred = model_k.predict(patient)
 # 예측결과 출력
 print(pred*100)
 ```
+ 
  </details>
 
 output : 
