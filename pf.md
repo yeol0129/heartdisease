@@ -169,8 +169,11 @@ They are letters converted into numbers.
 > </details>
 > <img src="https://user-images.githubusercontent.com/111839344/191793441-ccc14e60-19c2-4ad0-bf01-63c8d7edfcf2.png" width="250" height="400">
 
-## 데이터 훈련
-> ### 학습셋과 테스트 셋의 구분. 테스트셋 20%, 학습셋 80%
+## Modeling
+### Separate data into training(80%) and validation(20%).학습셋과 테스트 셋의 구분. 테스트셋 20%, 학습셋 80%
+> <details>
+> <summary>open code</summary>
+>
 > ```python
 > X=dataset[2:,1:12]
 > Y=dataset[2:,12]
@@ -178,23 +181,30 @@ They are letters converted into numbers.
 > print(X_train.shape)
 > print(X_test.shape)
 > ```
+>
+> </details>
 > output : 
 > ```
 > (734, 11)
 > (184, 11)
 > ```
 
- ## 모델학습
- > ### 케라스 순차 모델
- >> ```python
- > >model=Sequential()
- > >model.add(Dense(64, input_dim=11,activation='relu'))    
- > >model.add(Dense(32, activation='relu'))                
- > >model.add(Dense(16, activation='relu'))               
- > >model.add(Dense(1,activation='sigmoid'))
- > >...(생략)
- > >hist=model.fit(X,Y,validation_split=0.20,epochs=350,batch_size=500,callbacks=[early_stopping_callback,checkpointer])
- > >```
+### Keras Sequential Model
+> <details>
+> <summary>open code</summary>
+>
+ > ```python
+ > model=Sequential()
+ > model.add(Dense(64, input_dim=11,activation='relu'))    
+ > model.add(Dense(32, activation='relu'))                
+ > model.add(Dense(16, activation='relu'))               
+ > model.add(Dense(1,activation='sigmoid'))
+ > ...
+ > hist=model.fit(X,Y,validation_split=0.20,epochs=350,batch_size=500,callbacks=[early_stopping_callback,checkpointer])
+ > ```
+>
+> </details>
+> 
  > >output : 
  > >```
  > >Epoch 00321: val_loss did not improve from 0.40818
