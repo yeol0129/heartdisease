@@ -170,7 +170,7 @@ They are letters converted into numbers.
 > <img src="https://user-images.githubusercontent.com/111839344/191793441-ccc14e60-19c2-4ad0-bf01-63c8d7edfcf2.png" width="250" height="400">
 
 ## Modeling
-### Separate data into training(80%) and validation(20%).학습셋과 테스트 셋의 구분. 테스트셋 20%, 학습셋 80%
+### Separate data into training(80%) and validation(20%).
 > <details>
 > <summary>open code</summary>
 >
